@@ -1,0 +1,38 @@
+﻿@model List<Fashion>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+   <div class="row col-12">
+       <div class="offset-6 col-9">
+           <a class="btn btn-primary mb-3" asp-controller="Home" asp-action="Add">Add Fashion </a>
+       </div>
+
+   </div>
+    <table class=" table table-bordered table-striped">
+        <tr>
+            <th>ID</th>
+            <th>BrandName</th>
+            <th>ClothesType</th>
+            <th>Size</th>
+        </tr>
+        @*<tr>
+            <td>1</td>
+            <td>Mr. Ugwu</td>
+            <td>Mrs. Peace</td>
+            <td>David</td>
+        </tr>*@
+
+        @foreach (var item in Model)
+        {
+                <tr>
+                    <td>@Html.DisplayFor(m => item.Id)</td>
+                    <td>@Html.DisplayFor(m => item.BrandName)</td>
+                    <td>@Html.DisplayFor(m => item.ClothesType)</td>
+                    <td>@Html.DisplayFor(m => item.Size)</td>
+
+                </tr>
+        }
+    </table>
+</div>
